@@ -8,7 +8,7 @@
     "build": "gulp && brunch build",
     "production": "gulp && brunch build --production",
     "preversion": "(rm -r dist || true) && mkdir dist",
-    "version": "npm run production && cp -R public dist && git add -A dist",
+    "version": "npm run production && cp -R public/ dist && git add -A dist",
     "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
