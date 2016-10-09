@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+@import '_settings.scss';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-everything;
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+section.header {
+  height: 200px;
+  background-color: $secondary-color;
+  margin-bottom: 20px;
+  color: white;
+
+  > div {
+    padding-top: 40px;
+  }
+}
+
+section.footer {
+  height: 100px;
+  background-color: $secondary-color;
+}
+
+section.main {
+  min-height: calc(100% - 300px);
+}
