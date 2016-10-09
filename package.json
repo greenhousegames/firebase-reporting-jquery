@@ -1,6 +1,6 @@
 {
   "name": "firebase-reporting-jquery",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "prestart": "npm run prebuild",
     "start": "gulp && brunch watch --server",
