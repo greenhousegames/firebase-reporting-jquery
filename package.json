@@ -37,17 +37,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/greenhousegames/public-website.git"
+    "url": "git+https://github.com/soumak77/firebase-reporting-jquery.git"
   },
-  "author": "Greenhouse Games, LLC",
+  "author": "Brian Soumakian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/greenhousegames/public-website/issues"
+    "url": "https://github.com/soumak77/firebase-reporting-jquery/issues"
   },
   "babel": {
     "presets": [
       "es2015"
     ]
   },
-  "homepage": "https://github.com/greenhousegames/public-website#readme"
+  "homepage": "https://github.com/soumak77/firebase-reporting-jquery#readme"
 }
