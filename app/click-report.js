@@ -58,10 +58,10 @@ class ClickReport {
         break;
     }
 
-    const aClickedQuery = this.reporting.where().sum('aclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
-    const bClickedQuery = this.reporting.where().sum('bclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
-    const cClickedQuery = this.reporting.where().sum('cclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
-    const dClickedQuery = this.reporting.where().sum('dclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
+    const aClickedQuery = this.reporting.filter().sum('aclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
+    const bClickedQuery = this.reporting.filter().sum('bclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
+    const cClickedQuery = this.reporting.filter().sum('cclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
+    const dClickedQuery = this.reporting.filter().sum('dclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
 
     rsvp.all([aClickedQuery, bClickedQuery, cClickedQuery, dClickedQuery]).then(function(values) {
       var element = jQuery('#' + id);
@@ -86,10 +86,10 @@ class ClickReport {
   }
 
   drawPieChart(id) {
-    const aClickedQuery = this.reporting.where().sum('aclicked').value();
-    const bClickedQuery = this.reporting.where().sum('bclicked').value();
-    const cClickedQuery = this.reporting.where().sum('cclicked').value();
-    const dClickedQuery = this.reporting.where().sum('dclicked').value();
+    const aClickedQuery = this.reporting.filter().sum('aclicked').value();
+    const bClickedQuery = this.reporting.filter().sum('bclicked').value();
+    const cClickedQuery = this.reporting.filter().sum('cclicked').value();
+    const dClickedQuery = this.reporting.filter().sum('dclicked').value();
 
     rsvp.all([aClickedQuery, bClickedQuery, cClickedQuery, dClickedQuery]).then(function(values) {
       var element = jQuery('#' + id);
@@ -115,7 +115,7 @@ class ClickReport {
   }
 
   drawTotalClicked() {
-    const query = this.reporting.where().sum('anyclicked').select(1);
+    const query = this.reporting.filter().sum('anyclicked').select(1);
 
     query.then(function(values) {
       jQuery('#total_clicked_count').text(values[0] || 0);
@@ -123,7 +123,7 @@ class ClickReport {
   }
 
   drawTotalUsers() {
-    const query = this.reporting.where('users').sum('anyclicked').count();
+    const query = this.reporting.filter('users').sum('anyclicked').count();
 
     query.then(function(value) {
       jQuery('#total_users_count').text(value || 0);
@@ -131,7 +131,7 @@ class ClickReport {
   }
 
   drawLastClicked() {
-    const query = this.reporting.where().last('timestamp').select(1);
+    const query = this.reporting.filter().last('timestamp').select(1);
 
     query.then(function(values) {
       if (values.length === 0) {
