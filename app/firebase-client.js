@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import rsvp from 'rsvp';
 
 class FirebaseClient {
   constructor() {
@@ -45,7 +44,7 @@ class FirebaseClient {
 
   waitForAuth() {
     const auth = this.firebase.auth();
-    const promise = new rsvp.Promise((resolve) => {
+    const promise = new Promise((resolve) => {
       const callback = () => {
         off();
         resolve();
@@ -56,7 +55,7 @@ class FirebaseClient {
   }
 
   requireAuth() {
-    const promise = new rsvp.Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
       this.waitForAuth().then(() => {
         if (!this.firebase.auth().currentUser) {
           this.firebase.auth().signInAnonymously().then(resolve).catch(reject);

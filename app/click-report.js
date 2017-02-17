@@ -1,5 +1,3 @@
-import rsvp from 'rsvp';
-
 class ClickReport {
   constructor(reporting) {
     this.reporting = reporting;
@@ -63,7 +61,7 @@ class ClickReport {
     const cClickedQuery = this.reporting.filter().sum('cclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
     const dClickedQuery = this.reporting.filter().sum('dclicked').during(during).range(queryStartTime.getTime(), queryEndTime.getTime()).values(true);
 
-    rsvp.all([aClickedQuery, bClickedQuery, cClickedQuery, dClickedQuery]).then(function(values) {
+    Promise.all([aClickedQuery, bClickedQuery, cClickedQuery, dClickedQuery]).then(function(values) {
       var element = jQuery('#' + id);
       var chartdata = [['Time', 'A', 'B', 'C', 'D']];
       for (var i = 0; i < values[0].length; i++) {
@@ -91,7 +89,7 @@ class ClickReport {
     const cClickedQuery = this.reporting.filter().sum('cclicked').value();
     const dClickedQuery = this.reporting.filter().sum('dclicked').value();
 
-    rsvp.all([aClickedQuery, bClickedQuery, cClickedQuery, dClickedQuery]).then(function(values) {
+    Promise.all([aClickedQuery, bClickedQuery, cClickedQuery, dClickedQuery]).then(function(values) {
       var element = jQuery('#' + id);
       var data = new google.visualization.arrayToDataTable([
         ['Button', 'Times Clicked'],

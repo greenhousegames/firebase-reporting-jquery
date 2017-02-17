@@ -7,6 +7,6 @@ Check out the [live example](https://fir-reporting.firebaseapp.com/)
 ## Technologies
 
 - [Firebase](https://firebase.google.com/)
-- [Firebase Reporting](https://github.com/soumak77/firebase-reporting)
+- [Firebase Reporting](https://github.com/greenhousegames/firebase-reporting)
 - [JQuery](https://jquery.com/)
 - [Foundation for Sites 6](http://foundation.zurb.com/sites.html)

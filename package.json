@@ -1,5 +1,5 @@
 {
-  "name": "firebase-reporting-jquery",
+  "name": "@greenhousegames/firebase-reporting-jquery",
   "version": "0.0.3",
   "scripts": {
     "prestart": "npm run prebuild",
@@ -12,12 +12,11 @@
     "postversion": "git push && git push --tags && npm publish && firebase deploy"
   },
   "dependencies": {
+    "@greenhousegames/firebase-reporting": "~0.1.0",
     "firebase": "^3.4.1",
-    "firebase-reporting": "~0.0.1",
     "foundation-sites": "~6.2.3",
     "jquery": "^2.2.0",
     "motion-ui": "~1.2.2",
-    "rsvp": "^3.3.3",
     "what-input": "^2.0.0"
   },
   "devDependencies": {
@@ -37,17 +36,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soumak77/firebase-reporting-jquery.git"
+    "url": "git+https://github.com/greenhousegames/firebase-reporting-jquery.git"
   },
-  "author": "Brian Soumakian",
+  "author": "Greenhouse Games, LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/soumak77/firebase-reporting-jquery/issues"
+    "url": "https://github.com/greenhousegames/firebase-reporting-jquery/issues"
   },
   "babel": {
     "presets": [
       "es2015"
     ]
   },
-  "homepage": "https://github.com/soumak77/firebase-reporting-jquery#readme"
+  "homepage": "https://github.com/greenhousegames/firebase-reporting-jquery#readme"
 }

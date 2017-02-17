@@ -1,4 +1,4 @@
-import FirebaseReporting from 'firebase-reporting';
+import FirebaseReporting from '@greenhousegames/firebase-reporting';
 
 class ReportingService extends FirebaseReporting {
   constructor(firebase) {
