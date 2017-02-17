@@ -1,6 +1,6 @@
 {
   "name": "@greenhousegames/firebase-reporting-jquery",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "scripts": {
     "prestart": "npm run prebuild",
     "start": "gulp && brunch watch --server",
